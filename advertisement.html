@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaceMaker - Event Timing Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+        }
+        .gradient-success {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+        }
+        .header-title {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #ff00ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .sport-card {
+            background: rgba(20, 30, 60, 0.8);
+            border: 2px solid #00d4ff;
+            backdrop-filter: blur(10px);
+        }
+        .feature-box {
+            background: rgba(15, 25, 50, 0.9);
+            border: 2px solid #00d4ff;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+            border-color: #00ff88;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
+            color: white;
+            font-weight: bold;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+        .finish-line {
+            background: linear-gradient(90deg, #ff00ff 0%, transparent 50%, #ff00ff 100%);
+            height: 3px;
+            margin: 30px 0;
+        }
+        .stat-box {
+            background: rgba(10, 20, 50, 0.9);
+            border: 2px solid #00ff88;
+            border-radius: 10px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen p-8">
+        <!-- Header -->
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="header-title text-6xl font-black mb-4">⏱️ PACEMAKER</h1>
+                <p class="text-2xl text-cyan-300 font-bold tracking-wider mb-2">Event Timing Calculator</p>
+                <p class="text-lg text-gray-300">Organize Your Perfect Schedule in Seconds</p>
+                <div class="finish-line"></div>
+            </div>
+
+            <!-- Main Description -->
+            <div class="sport-card rounded-xl p-8 mb-12 text-center">
+                <p class="text-lg leading-relaxed text-gray-200">
+                    Running a track meet? Managing a sports tournament? Coordinating events? <br/>
+                    <span class="text-cyan-300 font-bold">PaceMaker instantly calculates event timings, auto-generates schedules,
+                    and updates everything in real-time.</span><br/>
+                    What takes 2 hours in spreadsheets takes 2 minutes with PaceMaker.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <!-- Key Features -->
+                <div class="feature-box">
+                    <h3 class="text-xl font-black text-lime-300 mb-4">⚡ KEY FEATURES</h3>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li>✓ Instant time calculations</li>
+                        <li>✓ Real-time cascading updates</li>
+                        <li>✓ Local schedule storage</li>
+                        <li>✓ Export to CSV/Excel</li>
+                        <li>✓ Dark mode interface</li>
+                        <li>✓ Zero setup required</li>
+                    </ul>
+                </div>
+
+                <!-- Why Use It -->
+                <div class="feature-box">
+                    <h3 class="text-xl font-black text-lime-300 mb-4">🎯 WHY USE IT</h3>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li>✓ Stop manual math errors</li>
+                        <li>✓ Change anything, auto-recalc</li>
+                        <li>✓ Share schedules instantly</li>
+                        <li>✓ Save hours of work</li>
+                        <li>✓ Never lose your schedule</li>
+                        <li>✓ Professional results fast</li>
+                    </ul>
+                </div>
+
+                <!-- Perfect For -->
+                <div class="feature-box">
+                    <h3 class="text-xl font-black text-lime-300 mb-4">🏆 PERFECT FOR</h3>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li>🏃 Track & field meets</li>
+                        <li>🏊 Swimming competitions</li>
+                        <li>⚽ Tournament brackets</li>
+                        <li>🎯 Sports day events</li>
+                        <li>🎤 Conferences & talks</li>
+                        <li>⏱️ Any timed event</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Example Section -->
+            <div class="sport-card rounded-xl p-8 mb-12">
+                <h3 class="text-2xl font-black text-cyan-300 mb-6">📋 REAL-WORLD EXAMPLE</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold text-orange-400 mb-3">❌ Traditional Way (Spreadsheet)</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Manual math for each event <br/>
+                            15+ minutes of calculations <br/>
+                            Easy to make mistakes <br/>
+                            Multiple recalculations needed
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-lime-400 mb-3">✅ With PaceMaker</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Enter event name, start time, athletes, time per athlete <br/>
+                            Done in 2 minutes <br/>
+                            Change any number and entire schedule auto-updates <br/>
+                            Zero math errors
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits + Technical -->
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <!-- Benefits -->
+                <div class="feature-box">
+                    <h3 class="text-xl font-black text-lime-300 mb-4">💪 BENEFITS</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>⚡ Saves 80% of scheduling time</li>
+                        <li>🎯 Zero manual calculation errors</li>
+                        <li>🔒 100% locally secure</li>
+                        <li>💻 Works Windows, Mac, Linux</li>
+                        <li>🆓 Completely free to use</li>
+                        <li>📊 Export to any spreadsheet</li>
+                    </ul>
+                </div>
+
+                <!-- Technical -->
+                <div class="feature-box">
+                    <h3 class="text-xl font-black text-lime-300 mb-4">⚙️ TECHNICAL</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>🐍 Python FastAPI backend</li>
+                        <li>🌐 HTML/CSS/JavaScript frontend</li>
+                        <li>💾 No database setup needed</li>
+                        <li>🔐 No external servers</li>
+                        <li>📝 Open to customize</li>
+                        <li>⚡ Ultra-fast performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="stat-box text-center">
+                    <p class="text-4xl font-black text-lime-300 mb-2">80%</p>
+                    <p class="text-sm text-gray-300">Time Saved vs Spreadsheets</p>
+                </div>
+                <div class="stat-box text-center">
+                    <p class="text-4xl font-black text-cyan-300 mb-2">0</p>
+                    <p class="text-sm text-gray-300">Setup Steps Required</p>
+                </div>
+                <div class="stat-box text-center">
+                    <p class="text-4xl font-black text-orange-400 mb-2">∞</p>
+                    <p class="text-sm text-gray-300">Events You Can Schedule</p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center space-y-6">
+                <div class="sport-card rounded-xl p-8">
+                    <h2 class="text-3xl font-black text-lime-300 mb-4">Ready to Organize Your Perfect Schedule?</h2>
+                    <p class="text-lg text-gray-300 mb-6">Get started in seconds. No setup. No registration. Just smart scheduling.</p>
+                    <a href="#" class="cta-button">Get Started Now</a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-12 py-6 border-t border-cyan-500">
+                <p class="text-sm text-gray-400">PaceMaker — Event Timing Calculator | Built for Event Organizers</p>
+                <p class="text-xs text-gray-500 mt-2">💪 Python FastAPI • 🎨 Tailwind CSS • ⚡ Real-time Updates</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
