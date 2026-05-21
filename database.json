@@ -1,0 +1,145 @@
+{
+  "schedules": [
+    {
+      "id": "schedule-1779381779.376753",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T16:42:59.377077Z",
+      "updatedAt": "2026-05-21T16:42:59.377249Z",
+      "events": [
+        {
+          "id": "evt-1779381773554-0pu717vg0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 1,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 300,
+          "endTime": "09:05"
+        }
+      ]
+    },
+    {
+      "id": "schedule-1779381805.574992",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T16:43:25.575009Z",
+      "updatedAt": "2026-05-21T16:43:25.575017Z",
+      "events": [
+        {
+          "id": "evt-1779381773554-0pu717vg0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 1,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 300,
+          "endTime": "09:05"
+        }
+      ]
+    },
+    {
+      "id": "schedule-1779381823.945707",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T16:43:43.945733Z",
+      "updatedAt": "2026-05-21T16:43:43.945748Z",
+      "events": [
+        {
+          "id": "evt-1779381773554-0pu717vg0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 1,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 300,
+          "endTime": "09:05"
+        },
+        {
+          "id": "evt-1779381816730-zzsjnk8xg",
+          "name": "Sprint",
+          "startTime": "09:05",
+          "competitorCount": 1,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 45,
+          "durationInSeconds": 45,
+          "endTime": "09:05"
+        }
+      ]
+    },
+    {
+      "id": "schedule-1779381887.271828",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T16:44:47.271856Z",
+      "updatedAt": "2026-05-21T16:44:47.271872Z",
+      "events": [
+        {
+          "id": "evt-1779381773554-0pu717vg0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 1,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 300,
+          "endTime": "09:05"
+        },
+        {
+          "id": "evt-1779381816730-zzsjnk8xg",
+          "name": "Sprint",
+          "startTime": "09:05",
+          "competitorCount": 1,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 45,
+          "durationInSeconds": 45,
+          "endTime": "09:05"
+        },
+        {
+          "id": "evt-1779381881001-a8o0bqm0o",
+          "name": "test",
+          "startTime": "09:05",
+          "competitorCount": 1,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 256,
+          "durationInSeconds": 256,
+          "endTime": "09:10"
+        }
+      ]
+    },
+    {
+      "id": "schedule-1779383006.394346",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T17:03:26.394671Z",
+      "updatedAt": "2026-05-21T17:03:26.394980Z",
+      "events": [
+        {
+          "id": "evt-1779382631625-20n9b4qi0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 5,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 1500,
+          "endTime": "09:25"
+        },
+        {
+          "id": "evt-1779382694209-x2uhefrpo",
+          "name": "200m Sprint",
+          "startTime": "09:25",
+          "competitorCount": 2,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 360,
+          "durationInSeconds": 720,
+          "endTime": "09:37"
+        },
+        {
+          "id": "evt-1779382936298-63s2dis98",
+          "name": "800m Sprint",
+          "startTime": "09:37",
+          "competitorCount": 2,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 600,
+          "durationInSeconds": 1200,
+          "endTime": "09:57"
+        }
+      ]
+    }
+  ],
+  "currentScheduleId": "schedule-1779383006.394346"
+}
