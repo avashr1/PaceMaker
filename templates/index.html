@@ -7,83 +7,171 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {}
             }
         };
     </script>
     <style>
-        * { @apply dark; }
-        body { @apply bg-gray-900 text-gray-100; }
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+        }
+        .gradient-success {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+        }
+        .gradient-danger {
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+        }
+        .gradient-warning {
+            background: linear-gradient(135deg, #ffaa00 0%, #ff6600 100%);
+        }
+        .gradient-epic {
+            background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
+        }
+        .sport-card {
+            background: rgba(20, 30, 60, 0.8);
+            border: 2px solid #00d4ff;
+            backdrop-filter: blur(10px);
+        }
+        .sport-input {
+            background: rgba(15, 25, 50, 0.9);
+            border: 2px solid #00d4ff;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        .sport-input:focus {
+            border-color: #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+            outline: none;
+        }
+        .sport-btn {
+            position: relative;
+            overflow: hidden;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .sport-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+        .pulse-animation {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+            50% { box-shadow: 0 0 25px rgba(0, 212, 255, 0.8); }
+        }
+        .header-title {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #ff00ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .scoreboard {
+            background: rgba(10, 20, 50, 0.9);
+            border: 3px solid #00ff88;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .stat-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        .stat-value {
+            font-size: 28px;
+            font-weight: 900;
+            color: #00ff88;
+        }
+        table tbody tr:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+        .finish-line {
+            background: linear-gradient(90deg, #ff00ff 0%, transparent 50%, #ff00ff 100%);
+            height: 3px;
+            margin: 20px 0;
+        }
     </style>
 </head>
-<body class="dark bg-gray-900 text-gray-100">
+<body>
     <div class="min-h-screen p-6">
         <!-- Header -->
-        <div class="mb-8 border-b border-gray-700 pb-6">
-            <div class="flex items-center justify-between">
+        <div class="mb-8 pb-6 relative">
+            <div class="flex items-center justify-between mb-6">
                 <div>
-                    <h1 class="text-4xl font-bold text-white mb-2">⏱️ Event Timing Calculator</h1>
-                    <p class="text-gray-400">Create and manage competition schedules with automatic time cascading</p>
+                    <h1 class="header-title text-5xl font-black mb-2">🏆 COMPETITION TIMER</h1>
+                    <p class="text-cyan-300 text-lg font-bold tracking-wider">⚡ REAL-TIME SCHEDULE GENERATOR ⚡</p>
                 </div>
                 <div class="text-right">
-                    <p class="text-sm text-gray-400">Last saved:</p>
-                    <p id="lastSaved" class="text-lg font-semibold text-blue-400">Never</p>
+                    <p class="text-cyan-400 text-sm uppercase font-bold tracking-widest">Last Sync</p>
+                    <p id="lastSaved" class="text-2xl font-black text-lime-400 pulse-animation">--:--</p>
                 </div>
             </div>
+            <div class="finish-line"></div>
         </div>
 
         <!-- Main Container -->
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <!-- Left Panel: Input Form -->
             <div class="lg:col-span-2">
-                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 sticky top-6">
-                    <h2 class="text-2xl font-bold text-white mb-6">Add Event</h2>
+                <div class="sport-card rounded-xl p-8 sticky top-6">
+                    <h2 class="text-3xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-lime-400">⚙️ NEW EVENT</h2>
 
                     <!-- Event Input Form -->
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1">Event Name</label>
+                            <label class="block text-xs font-black uppercase tracking-widest text-cyan-300 mb-2">🏃 Event Name</label>
                             <input
                                 type="text"
                                 id="eventName"
                                 placeholder="e.g., 100m Sprint"
-                                class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition"
+                                class="sport-input w-full px-4 py-3 rounded-lg text-white placeholder-cyan-500"
                             />
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1">Start Time</label>
+                            <label class="block text-xs font-black uppercase tracking-widest text-cyan-300 mb-2">⏰ Start Time</label>
                             <input
                                 type="time"
                                 id="startTime"
-                                class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500 transition"
+                                class="sport-input w-full px-4 py-3 rounded-lg text-white"
                                 value="09:00"
                             />
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-1">Competitors</label>
+                                <label class="block text-xs font-black uppercase tracking-widest text-cyan-300 mb-2">👥 Athletes</label>
                                 <input
                                     type="number"
                                     id="competitorCount"
                                     min="1"
                                     placeholder="24"
-                                    class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition"
+                                    class="sport-input w-full px-4 py-3 rounded-lg text-white placeholder-cyan-500"
                                     value="1"
                                 />
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-1">Avg Time (sec)</label>
+                                <label class="block text-xs font-black uppercase tracking-widest text-cyan-300 mb-2">⏱️ Time/Athlete</label>
                                 <input
                                     type="number"
                                     id="avgTimeSec"
                                     min="0"
                                     max="59"
                                     placeholder="45"
-                                    class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition"
+                                    class="sport-input w-full px-4 py-3 rounded-lg text-white placeholder-cyan-500"
                                     value="0"
                                 />
                             </div>
@@ -91,35 +179,36 @@
 
                         <button
                             onclick="addEvent()"
-                            class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded transition duration-200 flex items-center justify-center gap-2"
+                            class="sport-btn gradient-epic w-full mt-8 text-white font-black py-4 px-4 rounded-lg flex items-center justify-center gap-2 text-lg"
                         >
-                            <span>➕</span>
-                            <span>Add Event</span>
+                            <span>⚡</span>
+                            <span>LAUNCH EVENT</span>
+                            <span>⚡</span>
                         </button>
                     </div>
 
                     <!-- Summary Section -->
-                    <div class="mt-8 pt-6 border-t border-gray-700 space-y-3">
-                        <div class="bg-gray-700 rounded p-4">
-                            <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Total Events</p>
-                            <p id="totalEvents" class="text-3xl font-bold text-white">0</p>
+                    <div class="mt-10">
+                        <div class="scoreboard">
+                            <p class="stat-label">📊 Total Events</p>
+                            <p id="totalEvents" class="stat-value">0</p>
                         </div>
-                        <div class="bg-gray-700 rounded p-4">
-                            <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Schedule Duration</p>
-                            <p id="totalDuration" class="text-2xl font-bold text-green-400">0h 0m</p>
+                        <div class="scoreboard">
+                            <p class="stat-label">⏱️ Total Duration</p>
+                            <p id="totalDuration" class="stat-value">0h 0m</p>
                         </div>
-                        <div class="bg-gray-700 rounded p-4">
-                            <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">End Time</p>
-                            <p id="endTime" class="text-2xl font-bold text-orange-400">--:--</p>
+                        <div class="scoreboard">
+                            <p class="stat-label">🏁 Finish Time</p>
+                            <p id="endTime" class="stat-value text-orange-400">--:--</p>
                         </div>
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="mt-6 space-y-2">
+                    <div class="mt-8 space-y-3">
                         <button
                             onclick="saveSchedule()"
                             id="saveBtn"
-                            class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-200 flex items-center justify-center gap-2"
+                            class="sport-btn gradient-success w-full text-black font-black py-3 px-4 rounded-lg flex items-center justify-center gap-2 uppercase"
                         >
                             <span>💾</span>
                             <span>Save Schedule</span>
@@ -127,47 +216,50 @@
                         <button
                             onclick="exportCSV()"
                             id="exportBtn"
-                            class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition duration-200 flex items-center justify-center gap-2"
+                            class="sport-btn gradient-warning w-full text-black font-black py-3 px-4 rounded-lg flex items-center justify-center gap-2 uppercase"
                         >
                             <span>📥</span>
                             <span>Export to CSV</span>
                         </button>
                         <button
                             onclick="clearSchedule()"
-                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-200 flex items-center justify-center gap-2"
+                            class="sport-btn gradient-danger w-full text-white font-black py-3 px-4 rounded-lg flex items-center justify-center gap-2 uppercase"
                         >
                             <span>🗑️</span>
-                            <span>Clear Schedule</span>
+                            <span>Clear All</span>
                         </button>
                     </div>
 
                     <!-- Notification -->
-                    <div id="notification" class="hidden mt-4 p-3 rounded text-sm text-center font-medium"></div>
+                    <div id="notification" class="hidden mt-6 p-4 rounded-lg text-center font-bold text-lg uppercase tracking-wide"></div>
                 </div>
             </div>
 
             <!-- Right Panel: Schedule Table -->
             <div class="lg:col-span-3">
-                <div class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
+                <div class="sport-card rounded-xl border-4 border-lime-400 overflow-hidden">
+                    <div class="bg-gradient-to-r from-cyan-600 to-blue-600 px-6 py-4">
+                        <h3 class="text-2xl font-black text-white">🏁 RACE SCHEDULE</h3>
+                    </div>
                     <div class="overflow-x-auto">
                         <table class="w-full">
                             <thead>
-                                <tr class="bg-gray-700 border-b border-gray-600">
-                                    <th class="px-4 py-3 text-left text-xs font-bold uppercase text-gray-300">#</th>
-                                    <th class="px-4 py-3 text-left text-xs font-bold uppercase text-gray-300">Event</th>
-                                    <th class="px-4 py-3 text-center text-xs font-bold uppercase text-gray-300">Start Time</th>
-                                    <th class="px-4 py-3 text-center text-xs font-bold uppercase text-gray-300">End Time</th>
-                                    <th class="px-4 py-3 text-center text-xs font-bold uppercase text-gray-300">Duration</th>
-                                    <th class="px-4 py-3 text-center text-xs font-bold uppercase text-gray-300">Competitors</th>
-                                    <th class="px-4 py-3 text-center text-xs font-bold uppercase text-gray-300">Avg Time</th>
-                                    <th class="px-4 py-3 text-center text-xs font-bold uppercase text-gray-300">Actions</th>
+                                <tr class="bg-gradient-to-r from-cyan-900 to-blue-900 border-b-4 border-lime-400">
+                                    <th class="px-4 py-4 text-left text-xs font-black uppercase text-lime-300">#</th>
+                                    <th class="px-4 py-4 text-left text-xs font-black uppercase text-lime-300">🏃 Event</th>
+                                    <th class="px-4 py-4 text-center text-xs font-black uppercase text-lime-300">🏁 Start</th>
+                                    <th class="px-4 py-4 text-center text-xs font-black uppercase text-lime-300">✓ End</th>
+                                    <th class="px-4 py-4 text-center text-xs font-black uppercase text-lime-300">⏱️ Duration</th>
+                                    <th class="px-4 py-4 text-center text-xs font-black uppercase text-lime-300">👥 Athletes</th>
+                                    <th class="px-4 py-4 text-center text-xs font-black uppercase text-lime-300">⏰ Time</th>
+                                    <th class="px-4 py-4 text-center text-xs font-black uppercase text-lime-300">⚙️ Control</th>
                                 </tr>
                             </thead>
                             <tbody id="eventsTable">
-                                <tr class="border-t border-gray-700">
-                                    <td colspan="8" class="px-4 py-8 text-center text-gray-400">
-                                        <p class="text-lg">📭 No events yet</p>
-                                        <p class="text-sm mt-1">Add your first event to get started</p>
+                                <tr class="border-t-2 border-cyan-500">
+                                    <td colspan="8" class="px-4 py-12 text-center text-cyan-400">
+                                        <p class="text-2xl font-black mb-2">🚀 READY TO RACE?</p>
+                                        <p class="text-sm uppercase tracking-wider">Launch your first event to get started</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -227,7 +319,7 @@
             const avgTimeSec = parseInt(document.getElementById('avgTimeSec').value) || 0;
 
             if (!name || competitorCount < 1) {
-                showNotification('Please fill in all required fields', 'error');
+                showNotification('⚠️ Fill all fields! Athletes must be ≥ 1', 'error');
                 return;
             }
 
@@ -251,7 +343,7 @@
             document.getElementById('avgTimeSec').value = '0';
 
             cascadeCalculation();
-            showNotification('Event added successfully', 'success');
+            showNotification('🚀 Event Launched! Full speed ahead!', 'success');
         }
 
         // Cascade recalculation logic
@@ -310,10 +402,10 @@
 
             if (events.length === 0) {
                 tbody.innerHTML = `
-                    <tr class="border-t border-gray-700">
-                        <td colspan="8" class="px-4 py-8 text-center text-gray-400">
-                            <p class="text-lg">📭 No events yet</p>
-                            <p class="text-sm mt-1">Add your first event to get started</p>
+                    <tr class="border-t-2 border-cyan-500">
+                        <td colspan="8" class="px-4 py-12 text-center text-cyan-400">
+                            <p class="text-2xl font-black mb-2">🚀 READY TO RACE?</p>
+                            <p class="text-sm uppercase tracking-wider">Launch your first event to get started</p>
                         </td>
                     </tr>
                 `;
@@ -322,44 +414,44 @@
             }
 
             tbody.innerHTML = events.map((event, index) => `
-                <tr class="border-t border-gray-700 hover:bg-gray-700 transition">
-                    <td class="px-4 py-3 text-sm font-semibold text-blue-400">${index + 1}</td>
-                    <td class="px-4 py-3 text-sm font-medium text-white">${event.name}</td>
-                    <td class="px-4 py-3 text-center text-sm">
+                <tr class="border-t-2 border-cyan-500">
+                    <td class="px-4 py-4 text-sm font-black text-lime-300">${index + 1}</td>
+                    <td class="px-4 py-4 text-sm font-bold text-white">${event.name}</td>
+                    <td class="px-4 py-4 text-center text-sm">
                         <input
                             type="time"
                             value="${event.startTime}"
                             onchange="updateEventTime(${index}, this.value)"
-                            class="bg-gray-700 border border-gray-600 rounded px-2 py-1 text-white text-xs focus:outline-none focus:border-blue-500"
+                            class="sport-input rounded px-2 py-1 text-xs w-full focus:outline-none"
                         />
                     </td>
-                    <td class="px-4 py-3 text-center text-sm text-green-400 font-semibold">${event.endTime}</td>
-                    <td class="px-4 py-3 text-center text-sm text-gray-300">${formatDuration(event.durationInSeconds)}</td>
-                    <td class="px-4 py-3 text-center text-sm">
+                    <td class="px-4 py-4 text-center text-sm font-black text-lime-400">${event.endTime}</td>
+                    <td class="px-4 py-4 text-center text-sm font-bold text-cyan-300">${formatDuration(event.durationInSeconds)}</td>
+                    <td class="px-4 py-4 text-center text-sm">
                         <input
                             type="number"
                             value="${event.competitorCount}"
                             min="1"
                             onchange="updateEventCompetitors(${index}, this.value)"
-                            class="bg-gray-700 border border-gray-600 rounded px-2 py-1 text-white text-xs w-16 focus:outline-none focus:border-blue-500"
+                            class="sport-input rounded px-2 py-1 text-xs w-16 focus:outline-none"
                         />
                     </td>
-                    <td class="px-4 py-3 text-center text-sm">
+                    <td class="px-4 py-4 text-center text-sm">
                         <input
                             type="number"
                             value="${event.avgTimeSeconds}"
                             min="0"
                             max="59"
                             onchange="updateEventAvgTime(${index}, this.value)"
-                            class="bg-gray-700 border border-gray-600 rounded px-2 py-1 text-white text-xs w-16 focus:outline-none focus:border-blue-500"
+                            class="sport-input rounded px-2 py-1 text-xs w-16 focus:outline-none"
                         />s
                     </td>
-                    <td class="px-4 py-3 text-center text-sm">
+                    <td class="px-4 py-4 text-center text-sm">
                         <button
                             onclick="deleteEvent(${index})"
-                            class="bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded text-xs transition"
+                            class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded font-bold transition transform hover:scale-110"
                         >
-                            Delete
+                            ✕
                         </button>
                     </td>
                 </tr>
@@ -388,10 +480,10 @@
 
         // Delete event
         function deleteEvent(index) {
-            if (confirm(`Delete "${events[index].name}"?`)) {
+            if (confirm(`Remove "${events[index].name}"?`)) {
                 events.splice(index, 1);
                 cascadeCalculation();
-                showNotification('Event deleted', 'success');
+                showNotification('🗑️ Event Eliminated!', 'success');
             }
         }
 
@@ -415,13 +507,13 @@
         // Save schedule to backend
         async function saveSchedule() {
             if (events.length === 0) {
-                showNotification('Add events before saving', 'error');
+                showNotification('⚠️ No events to save!', 'error');
                 return;
             }
 
             const btn = document.getElementById('saveBtn');
             btn.disabled = true;
-            btn.textContent = '💾 Saving...';
+            btn.textContent = '💾 SYNCING...';
 
             try {
                 const response = await fetch('/api/schedule', {
@@ -438,28 +530,28 @@
                 const result = await response.json();
 
                 if (result.success) {
-                    showNotification('Schedule saved successfully! ✓', 'success');
+                    showNotification('✅ SCHEDULE SAVED! CHAMPIONSHIP READY!', 'success');
                     updateLastSaved();
                 } else {
-                    showNotification('Failed to save schedule', 'error');
+                    showNotification('❌ Save failed', 'error');
                 }
             } catch (error) {
                 console.error('Error saving schedule:', error);
-                showNotification('Error saving schedule', 'error');
+                showNotification('❌ Connection Error', 'error');
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = '<span>💾</span><span>Save Schedule</span>';
+                btn.innerHTML = '<span>💾</span><span>SAVE SCHEDULE</span>';
             }
         }
 
         // Export schedule as CSV
         function exportCSV() {
             if (events.length === 0) {
-                showNotification('Add events before exporting', 'error');
+                showNotification('⚠️ No events to export!', 'error');
                 return;
             }
 
-            const headers = ['#', 'Event', 'Start Time', 'End Time', 'Duration', 'Competitors', 'Avg Time (sec)'];
+            const headers = ['#', 'Event', 'Start Time', 'End Time', 'Duration', 'Athletes', 'Time/Athlete (sec)'];
             const rows = events.map((event, index) => [
                 index + 1,
                 event.name,
@@ -473,7 +565,7 @@
             // Add summary row
             const lastEvent = events[events.length - 1];
             const totalSeconds = timeToSeconds(lastEvent.endTime) - timeToSeconds(events[0].startTime);
-            rows.push(['', 'TOTAL', events[0].startTime, lastEvent.endTime, formatDuration(totalSeconds), '', '']);
+            rows.push(['', 'TOTAL RACE TIME', events[0].startTime, lastEvent.endTime, formatDuration(totalSeconds), '', '']);
 
             // Generate CSV content
             const csvContent = [
@@ -485,22 +577,22 @@
             const element = document.createElement('a');
             element.setAttribute('href', `data:text/csv;charset=utf-8,${encodeURIComponent(csvContent)}`);
             const timestamp = new Date().toISOString().slice(0, 10);
-            element.setAttribute('download', `schedule_${timestamp}.csv`);
+            element.setAttribute('download', `championship_schedule_${timestamp}.csv`);
             element.style.display = 'none';
 
             document.body.appendChild(element);
             element.click();
             document.body.removeChild(element);
 
-            showNotification('Schedule exported successfully! 📥', 'success');
+            showNotification('📥 SCHEDULE EXPORTED! SHARE THE HEAT!', 'success');
         }
 
         // Clear schedule
         function clearSchedule() {
-            if (confirm('Clear all events? This cannot be undone.')) {
+            if (confirm('🗑️ WIPE ALL EVENTS? This cannot be undone!')) {
                 events = [];
                 updateTable();
-                showNotification('Schedule cleared', 'success');
+                showNotification('🗑️ SLATE CLEARED! Start Fresh!', 'success');
             }
         }
 
@@ -508,21 +600,24 @@
         function showNotification(message, type = 'info') {
             const notification = document.getElementById('notification');
             notification.textContent = message;
-            notification.className = `p-3 rounded text-sm text-center font-medium`;
+            notification.className = `p-4 rounded-lg text-center font-bold`;
 
             if (type === 'success') {
-                notification.classList.add('bg-green-600', 'text-white');
+                notification.style.background = 'linear-gradient(135deg, #00ff88 0%, #00cc66 100%)';
+                notification.style.color = '#000';
             } else if (type === 'error') {
-                notification.classList.add('bg-red-600', 'text-white');
+                notification.style.background = 'linear-gradient(135deg, #ff3333 0%, #cc0000 100%)';
+                notification.style.color = '#fff';
             } else {
-                notification.classList.add('bg-blue-600', 'text-white');
+                notification.style.background = 'linear-gradient(135deg, #00d4ff 0%, #0099ff 100%)';
+                notification.style.color = '#000';
             }
 
             notification.classList.remove('hidden');
 
             setTimeout(() => {
                 notification.classList.add('hidden');
-            }, 3000);
+            }, 3500);
         }
 
         // Update last saved timestamp

@@ -139,7 +139,159 @@
           "endTime": "09:57"
         }
       ]
+    },
+    {
+      "id": "schedule-1779383435.927377",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T17:10:35.927416Z",
+      "updatedAt": "2026-05-21T17:10:35.927432Z",
+      "events": [
+        {
+          "id": "evt-1779382631625-20n9b4qi0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 4,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 1200,
+          "endTime": "09:20"
+        },
+        {
+          "id": "evt-1779382694209-x2uhefrpo",
+          "name": "200m Sprint",
+          "startTime": "09:20",
+          "competitorCount": 2,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 360,
+          "durationInSeconds": 720,
+          "endTime": "09:32"
+        },
+        {
+          "id": "evt-1779382936298-63s2dis98",
+          "name": "800m Sprint",
+          "startTime": "09:32",
+          "competitorCount": 2,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 600,
+          "durationInSeconds": 1200,
+          "endTime": "09:52"
+        }
+      ]
+    },
+    {
+      "id": "schedule-1779383437.074901",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T17:10:37.074928Z",
+      "updatedAt": "2026-05-21T17:10:37.074944Z",
+      "events": [
+        {
+          "id": "evt-1779382631625-20n9b4qi0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 4,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 1200,
+          "endTime": "09:20"
+        },
+        {
+          "id": "evt-1779382694209-x2uhefrpo",
+          "name": "200m Sprint",
+          "startTime": "09:20",
+          "competitorCount": 2,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 360,
+          "durationInSeconds": 720,
+          "endTime": "09:32"
+        },
+        {
+          "id": "evt-1779382936298-63s2dis98",
+          "name": "800m Sprint",
+          "startTime": "09:32",
+          "competitorCount": 2,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 600,
+          "durationInSeconds": 1200,
+          "endTime": "09:52"
+        }
+      ]
+    },
+    {
+      "id": "schedule-1779383464.793169",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T17:11:04.793190Z",
+      "updatedAt": "2026-05-21T17:11:04.793201Z",
+      "events": [
+        {
+          "id": "evt-1779382631625-20n9b4qi0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 4,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 1200,
+          "endTime": "09:20"
+        },
+        {
+          "id": "evt-1779382694209-x2uhefrpo",
+          "name": "200m Sprint",
+          "startTime": "09:20",
+          "competitorCount": 3,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 360,
+          "durationInSeconds": 1080,
+          "endTime": "09:38"
+        },
+        {
+          "id": "evt-1779382936298-63s2dis98",
+          "name": "800m Sprint",
+          "startTime": "09:38",
+          "competitorCount": 3,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 600,
+          "durationInSeconds": 1800,
+          "endTime": "10:08"
+        }
+      ]
+    },
+    {
+      "id": "schedule-1779383470.389649",
+      "name": "Competition Schedule",
+      "createdAt": "2026-05-21T17:11:10.389685Z",
+      "updatedAt": "2026-05-21T17:11:10.389705Z",
+      "events": [
+        {
+          "id": "evt-1779382631625-20n9b4qi0",
+          "name": "100m Sprint",
+          "startTime": "09:00",
+          "competitorCount": 5,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 300,
+          "durationInSeconds": 1500,
+          "endTime": "09:25"
+        },
+        {
+          "id": "evt-1779382694209-x2uhefrpo",
+          "name": "200m Sprint",
+          "startTime": "09:25",
+          "competitorCount": 3,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 360,
+          "durationInSeconds": 1080,
+          "endTime": "09:43"
+        },
+        {
+          "id": "evt-1779382936298-63s2dis98",
+          "name": "800m Sprint",
+          "startTime": "09:43",
+          "competitorCount": 3,
+          "avgTimeMinutes": 0,
+          "avgTimeSeconds": 600,
+          "durationInSeconds": 1800,
+          "endTime": "10:13"
+        }
+      ]
     }
   ],
-  "currentScheduleId": "schedule-1779383006.394346"
+  "currentScheduleId": "schedule-1779383470.389649"
 }
